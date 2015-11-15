@@ -61,6 +61,8 @@ import com.android.messaging.util.UriUtil;
 
 import java.util.List;
 
+import com.suda.cloud.phone.PhoneUtil;
+
 /**
  * The view for a single entry in a conversation list.
  */
@@ -118,6 +120,7 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
     private ViewGroup mCrossSwipeBackground;
     private ViewGroup mSwipeableContent;
     private TextView mConversationNameView;
+    private TextView mPhoneLocationView;
     private TextView mSnippetTextView;
     private TextView mSubjectTextView;
     private TextView mTimestampTextView;
@@ -130,10 +133,12 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
     private AsyncImageView mImagePreviewView;
     private AudioAttachmentView mAudioAttachmentView;
     private HostInterface mHostInterface;
+    private Context mContext;
 
     public ConversationListItemView(final Context context, final AttributeSet attrs) {
         super(context, attrs);
         mData = new ConversationListItemData();
+        mContext = context;
         final Resources res = context.getResources();
     }
 
@@ -143,6 +148,7 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
         mCrossSwipeBackground = (ViewGroup) findViewById(R.id.crossSwipeBackground);
         mSwipeableContent = (ViewGroup) findViewById(R.id.swipeableContent);
         mConversationNameView = (TextView) findViewById(R.id.conversation_name);
+        mPhoneLocationView = (TextView) findViewById(R.id.phone_location);
         mSnippetTextView = (TextView) findViewById(R.id.conversation_snippet);
         mSubjectTextView = (TextView) findViewById(R.id.conversation_subject);
         mTimestampTextView = (TextView) findViewById(R.id.conversation_timestamp);
@@ -180,6 +186,13 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
             setSnippet();
         } else if (v == mSubjectTextView) {
             setSubject();
+        }
+    }
+
+    private void setPhoneLocation() {
+        String number = mData.getOtherParticipantNormalizedDestination();
+        if (PhoneUtil.isZh(true)) {
+            mPhoneLocationView.setText(PhoneUtil.getPhoneUtil(mContext).getLocalNumberInfo(number));
         }
     }
 
@@ -388,6 +401,9 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
         mSubjectTextView.setTextColor(color);
         mSubjectTextView.setTypeface(typeface, typefaceStyle);
 
+        mPhoneLocationView.setTextColor(color);
+        setPhoneLocation();
+
         setSnippet();
         setConversationName();
         setSubject();
@@ -397,14 +413,14 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
         final boolean isDefaultSmsApp = PhoneUtils.getDefault().isDefaultSmsApp();
         // don't show the error state unless we're the default sms app
         if (mData.getIsFailedStatus() && isDefaultSmsApp) {
-            mTimestampTextView.setTextColor(resources.getColor(R.color.conversation_list_error));
-            mTimestampTextView.setTypeface(mListItemReadTypeface, typefaceStyle);
-            int failureMessageId = R.string.message_status_download_failed;
-            if (mData.getIsMessageTypeOutgoing()) {
-                failureMessageId = MmsUtils.mapRawStatusToErrorResourceId(mData.getMessageStatus(),
-                        mData.getMessageRawTelephonyStatus());
-            }
-            mTimestampTextView.setText(resources.getString(failureMessageId));
+            //mTimestampTextView.setTextColor(resources.getColor(R.color.conversation_list_error));
+            //mTimestampTextView.setTypeface(mListItemReadTypeface, typefaceStyle);
+            //int failureMessageId = R.string.message_status_download_failed;
+            //if (mData.getIsMessageTypeOutgoing()) {
+            //    failureMessageId = MmsUtils.mapRawStatusToErrorResourceId(mData.getMessageStatus(),
+            //            mData.getMessageRawTelephonyStatus());
+            //}
+            //mTimestampTextView.setText(resources.getString(failureMessageId));
         } else if (mData.getShowDraft()
                 || mData.getMessageStatus() == MessageData.BUGLE_STATUS_OUTGOING_DRAFT
                 // also check for unknown status which we get because sometimes the conversation
