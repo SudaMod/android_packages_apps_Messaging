@@ -153,25 +153,23 @@
                     android:layout_weight="1"
                     android:layout_width="match_parent">
                     <TextView
-                        android:layout_alignParentLeft="true"
-                        android:orientation="vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_toLeftOf="@+id/conversation_timestamp"
-                        android:background="@android:color/transparent" />
-                    <TextView
                         android:id="@+id/conversation_subject"
                         style="@style/ConversationListItemViewTextStyle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_toLeftOf="@+id/conversation_timestamp"
+                        android:layout_alignParentLeft="true"
                         android:singleLine="true"
                         android:ellipsize="end"
                         android:visibility="gone" />
                     <TextView
                         android:id="@+id/conversation_snippet"
+                        android:layout_alignParentLeft="true"
                         style="@style/ConversationListItemViewTextStyle"
+                        android:layout_toLeftOf="@+id/conversation_timestamp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
                         android:ellipsize="end" />
                     <TextView
                         android:layout_alignParentRight="true"
