@@ -83,6 +83,9 @@ import com.android.messaging.util.RingtoneUtil;
 import com.android.messaging.util.ThreadUtil;
 import com.android.messaging.util.UriUtil;
 
+import com.cyanogenmod.messaging.quickmessage.QuickMessageHelper;
+import com.cyanogenmod.messaging.quickmessage.NotificationInfo;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -531,6 +534,11 @@ public class BugleNotifications {
                     .getPendingIntentForConversationActivity(context,
                             state.mConversationIds.first(),
                             null /*draft*/);
+
+            NotificationInfo ni = state.getNotificationInfo();
+            if (ni != null) {
+                QuickMessageHelper.addQuickMessageAction(context, notifBuilder, ni);
+            }
         }
         notifBuilder.setContentIntent(destinationIntent);
 
@@ -1295,4 +1303,3 @@ public class BugleNotifications {
                 builder.build());
     }
 }
-
