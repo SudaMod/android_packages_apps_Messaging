@@ -39,7 +39,7 @@ public class CopyCaptchasReceiver extends BroadcastReceiver {
             c.setText(captchas);
             Toast.makeText(context, context.getString(R.string.code_have_copy), 1000).show();
             //MarkRead
-            //BugleNotifications.markMessagesAsRead(conversationId);
+            BugleNotifications.markMessagesAsRead(conversationId);
             BugleNotifications.cancelNotification(context, BugleNotifications.CAPTCHAS_NOTIFICATION_ID);
         }
     }
