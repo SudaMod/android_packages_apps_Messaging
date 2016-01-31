@@ -200,12 +200,12 @@ public class BugleNotifications {
             if ((coverage & UPDATE_MESSAGES) != 0) {
                 if(message != null){
                     String captchas = SmscoderHelper.getSmsCode("", message.getMessageText());
-					String captchaProvider = SmscoderHelper.getSender("", message.getMessageText());
+		    String captchaProvider = SmscoderHelper.getSender("", message.getMessageText());
                     long timeMillis = message.getReceivedTimeStamp();
-					if(captchas != null && !"".equals(captchas)) {
-					    updateCaptchasNotication(conversationId, captchas, captchaProvider, timeMillis);
-					}
-                    return;
+		    if(captchas != null && !"".equals(captchas)) {
+		        updateCaptchasNotication(conversationId, captchas, captchaProvider, timeMillis);
+                        return;
+		    }
                 }
                 createMessageNotification(silent, conversationId);
             }
