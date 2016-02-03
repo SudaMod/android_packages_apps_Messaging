@@ -199,6 +199,7 @@ public class ConversationListItemView extends FrameLayout implements OnClickList
 
     private void setPhoneLocation() {
         String number = mData.getOtherParticipantNormalizedDestination();
+        number = ((number == null) ? " " : number); 
         if (LanguagesUtils.isZh(true)) {
             mPhoneLocationView.setText(PhoneUtil.getPhoneUtil(mContext).getLocalNumberInfo(number,true));
         }
