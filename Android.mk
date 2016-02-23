@@ -58,7 +58,6 @@ LOCAL_STATIC_JAVA_LIBRARIES += libOKIO
 
 
 LOCAL_STATIC_JAVA_LIBRARIES += contacts-picaso
-LOCAL_STATIC_JAVA_LIBRARIES += glide
 
 include $(LOCAL_PATH)/version.mk
 
