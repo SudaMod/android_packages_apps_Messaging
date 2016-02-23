@@ -68,7 +68,7 @@
     <color name="message_error_bubble_color_incoming">#e2e2e2</color>
     <color name="message_audio_button_color_incoming">#ffffffff</color>
     <color name="message_bubble_color_selected">#8BC34A</color>
-    <color name="message_image_selected_tint">#80689F38</color>
+    <color name="message_image_selected_tint">#808227DB</color>
     <color name="generic_video_icon">#ff808080</color>
 
     <!-- Base color used for color filtering. -->
@@ -143,7 +143,7 @@
     <color name="sim_indicator_color_light">#ffffff</color>
     <color name="sim_indicator_color_dark">#323232</color>
 
-    <color name="text_highlight_color">#80689F38</color>
+    <color name="text_highlight_color">#808227DB</color>
     <color name="search_view_text_cursor">#b0dddddd</color>
 
     <color name="button_bar_action_button_text_color">#03a9f4</color>
