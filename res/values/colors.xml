@@ -143,7 +143,7 @@
     <color name="sim_indicator_color_light">#ffffff</color>
     <color name="sim_indicator_color_dark">#323232</color>
 
-    <color name="text_highlight_color">#808227DB</color>
+    <color name="text_highlight_color">#80689F38</color>
     <color name="search_view_text_cursor">#b0dddddd</color>
 
     <color name="button_bar_action_button_text_color">#03a9f4</color>
