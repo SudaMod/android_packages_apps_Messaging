@@ -59,5 +59,11 @@
 
 
 -dontwarn com.squareup.picasso.**
+-dontwarn org.apache.http.**
+-dontwarn android.net.http.**
+-dontwarn com.android.volley.toolbox.**
+-dontwarn com.google.android.gms.**
+-dontwarn org.codehaus.mojo.animal_sniffer.**
+-dontwarn okio.**
 
 -dontoptimize
