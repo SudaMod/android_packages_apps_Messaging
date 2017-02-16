@@ -45,6 +45,7 @@ LOCAL_STATIC_JAVA_LIBRARIES += libchips
 LOCAL_STATIC_JAVA_LIBRARIES += libphotoviewer
 LOCAL_STATIC_JAVA_LIBRARIES += libphonenumber
 LOCAL_STATIC_JAVA_LIBRARIES += colorpicker
+LOCAL_STATIC_JAVA_LIBRARIES += libSudaSdk
 
 include $(LOCAL_PATH)/version.mk
 
