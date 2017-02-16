@@ -39,6 +39,7 @@
     <uses-permission android:name="android.permission.READ_PROFILE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -352,6 +353,10 @@
                 <action android:name="android.provider.Telephony.MMS_DOWNLOADED" />
             </intent-filter>
         </receiver>
+
+        <receiver
+            android:name=".receiver.CopyCaptchasReceiver"
+            android:exported="true" />
 
         <!-- Intents for aborting SMS/MMS broadcasts pre-KLP -->
         <!-- Registered for a priority just ahead of inbox Messaging apps (2) -->
