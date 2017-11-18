@@ -40,7 +40,7 @@
         android:id="@+id/start_new_conversation_button"
         android:layout_width="@dimen/fab_size"
         android:layout_height="@dimen/fab_size"
-        android:layout_gravity="bottom|end"
+        android:layout_gravity="bottom|center"
         android:layout_marginBottom="@dimen/fab_bottom_margin"
         android:paddingBottom="@dimen/fab_padding_bottom"
         android:background="@drawable/fab_new_message_bg"
