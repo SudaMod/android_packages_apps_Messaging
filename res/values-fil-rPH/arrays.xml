@@ -16,9 +16,10 @@
     limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- Swipe to delete conversation -->
-  <!-- Show emoticons -->
-  <!-- Audio Library Tab for MMS attachments -->
-  <string name="mediapicker_audio_list_item_selected_content_description">Àudio ischertadu</string>
-  <string name="mediapicker_audio_list_item_unselected_content_description">Incarca pro ischertare</string>
+  <!-- String to match as no subject and filter out as a subject. For example, if the
+         subject string is "no subject", we won't display that. We'll pretend
+         no subject string was delivered. -->
+  <!-- Choices for quick-reply to message notification. Users with an Android
+    Wear device (e.g. smartwatch) can reply to messages either by speaking their
+    response, or choosing one of these predefined options. -->
 </resources>
