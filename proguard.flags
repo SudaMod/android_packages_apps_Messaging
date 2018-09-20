@@ -15,6 +15,7 @@
 # Keep enough data for stack traces
 -renamesourcefileattribute SourceFile
 -keepattributes SourceFile,LineNumberTable,*Annotation*
+-dontwarn org.codehaus.mojo.**
 
 # Keep classes and methods that have the guava @VisibleForTesting annotation
 -keep @com.google.common.annotations.VisibleForTesting class *
